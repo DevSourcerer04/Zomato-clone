@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zomato – Discover the best food & drinks</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --zomato-red:#e23744;
+      --ink:#1c1c1c;
+      --sub:#7a7a7a;
+      --bg:#fff;
+      --surface:#ffffff;
+      --chip:#f2f2f2;
+      --line:#eee;
+      --soft:#f8f8f8;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+    a{color:inherit}
+
+    .brandbar{
+      background:var(--zomato-red);
+      color:#fff;
+      padding:18px 16px;
+    }
+    .brandbar .wrap{
+      max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;
+    }
+    .brand{
+      font-weight:800;letter-spacing:.3px;font-size:28px;line-height:1;
+    }
+    .tagline{opacity:.95}
+
+    nav{
+      background:var(--surface);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{
+      max-width:1100px;margin:0 auto;display:flex;gap:8px;justify-content:center;
+    }
+    nav a{
+      display:inline-block;padding:12px 16px;margin:6px 4px;border-radius:12px;
+      text-decoration:none;font-weight:600;color:#4a4a4a;
+    }
+    nav a:hover{background:var(--chip);color:var(--ink)}
+
+    .container{max-width:1100px;margin:28px auto 64px;padding:0 16px}
+
+    .hero{
+      display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:center;
+      padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff, #fff6f7);
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+    .hero img{
+      width:100%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line);
+    }
+    .hero h2{margin:0 0 6px;font-size:28px}
+    .hero p{margin:6px 0 14px;color:#6b6b6b}
+    .searchbar{
+      display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);
+      background:#fff;border-radius:12px;box-shadow:inset 0 1px 0 rgba(0,0,0,.02)
+    }
+    .searchbar input{
+      border:none;outline:none;width:100%;font:500 14px Inter, sans-serif;color:#333;
+    }
+    .chip{
+      display:inline-block;background:#fff;border:1px solid var(--line);
+      padding:6px 10px;border-radius:999px;font-size:12px;color:#666;margin-right:8px;
+    }
+
+    h2{margin:32px 0 14px;font-size:24px}
+    .sub{color:#6d6d6d}
+
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
+    }
+    .card{
+      background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.03);
+    }
+    ol,ul{margin:0;padding-left:22px}
+    li{margin:8px 0}
+
+    table{
+      width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;
+      background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.03);
+    }
+    thead th{
+      background:#fff5f6;color:#383838;text-align:left;padding:14px 16px;font-weight:700;border-bottom:1px solid var(--line);
+    }
+    tbody td{padding:14px 16px;border-bottom:1px solid var(--line)}
+    tbody tr:last-child td{border-bottom:none}
+    tbody tr:hover{background:#fff8f8}
+    .rest-link{color:var(--zomato-red);font-weight:700;text-decoration:none}
+    .rest-link:hover{text-decoration:underline}
+    .rating{
+      display:inline-flex;align-items:center;gap:6px;background:#2e7d32;color:#fff;font-weight:700;
+      padding:4px 8px;border-radius:8px;font-size:13px
+    }
+    .rating span{opacity:.9}
+
+    .contact{
+      background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:16px 18px;color:#555
+    }
+    footer{margin-top:28px;color:#888;text-align:center}
+  </style>
+</head>
+<body>
+
+  <div class="brandbar" id="home">
+    <div class="wrap">
+      <div class="brand">zomato</div>
+      <div class="tagline">Discover the best food &amp; drinks in your city</div>
+    </div>
+  </div>
+
+  <nav aria-label="Primary">
+    <div class="wrap">
+      <a href="#home">Home</a>
+      <a href="#restaurants">Restaurants</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero" aria-labelledby="about-title">
+      <img
+        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop"
+        alt="Food spread representing Zomato"
+      />
+      <div>
+        <h2 id="about-title">About Zomato</h2>
+        <p class="sub">
+          Zomato helps you discover restaurants, order food online, and read real reviews. Explore dining options and cuisines around you with ease.
+        </p>
+
+        <div class="searchbar" role="search" aria-label="Search restaurants (visual)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="#b0b0b0" stroke-width="2"/>
+            <path d="M20 20L16 16" stroke="#b0b0b0" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input type="text" placeholder="Search for restaurants, cuisines or dishes" aria-disabled="true">
+        </div>
+
+        <div style="margin-top:12px">
+          <span class="chip">Food Delivery</span>
+          <span class="chip">Dining Out</span>
+          <span class="chip">Reviews</span>
+        </div>
+      </div>
+    </section>
+
+    <h2>Steps to Order Food on Zomato</h2>
+    <div class="grid">
+      <div class="card">
+        <ol>
+          <li>Open the Zomato website or app</li>
+          <li>Search for your favorite restaurant</li>
+          <li>Select your dishes</li>
+          <li>Place the order and make payment</li>
+          <li>Enjoy your meal</li>
+        </ol>
+      </div>
+      <div class="card" aria-label="Popular Cuisines on Zomato">
+        <ul>
+          <li>Indian</li>
+          <li>Chinese</li>
+          <li>Italian</li>
+          <li>Mexican</li>
+          <li>Thai</li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="restaurants" aria-labelledby="top-rated-title" style="margin-top:26px">
+      <h2 id="top-rated-title">Top Rated Restaurants</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:50%">Name</th>
+            <th style="width:30%">Location</th>
+            <th style="width:20%">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a class="rest-link" href="https://www.zomato.com/hyderabad/restaurants/barbeque-nation" target="_blank" rel="noopener">
+                Barbeque Nation
+              </a>
+            </td>
+            <td>Hyderabad</td>
+            <td><span class="rating">4.5 <span>★</span></span></td>
+          </tr>
+          <tr>
+            <td>
+              <a class="rest-link" href="https://www.zomato.com/hyderabad/restaurants/paradise" target="_blank" rel="noopener">
+                Paradise Biryani
+              </a>
+            </td>
+            <td>Secunderabad</td>
+            <td><span class="rating">4.3 <span>★</span></span></td>
+          </tr>
+          <tr>
+            <td>
+              <a class="rest-link" href="https://www.zomato.com/hyderabad/restaurants/dominos" target="_blank" rel="noopener">
+                Domino’s Pizza
+              </a>
+            </td>
+            <td>Banjara Hills</td>
+            <td><span class="rating">4.1 <span>★</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" style="margin-top:26px">
+      <h2 id="contact-title">Contact</h2>
+      <div class="contact">
+        Questions or feedback? Visit
+        <a href="https://www.zomato.com" target="_blank" rel="noopener" style="color:var(--zomato-red);font-weight:700">zomato.com</a>
+        for support and more information.
+      </div>
+    </section>
+
+    <footer>© 2025 Zomato demo page (educational use)</footer>
+  </main>
+</body>
+</html>
