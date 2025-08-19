@@ -29,7 +29,7 @@ It’s not a production-level site, but it’s my way of showing what I’ve lea
 
 ## Sneak Peek  
 
-*(Here you can add screenshots later once you have them — professors love seeing visuals!)*  
+![Alt text](./artifacts/homepage.png)
 
 ---
 
